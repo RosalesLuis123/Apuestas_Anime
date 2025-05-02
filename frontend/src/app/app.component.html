@@ -1,0 +1,13 @@
+<!-- Copyright © 2025 Tu Nombre. All rights reserved. -->
+<div class="min-h-screen bg-gray-900">
+  <nav class="gradient-bg p-4 shadow-lg">
+    <div class="container mx-auto flex justify-between items-center">
+      <h1 class="text-3xl font-bold neon-glow animate-pulse-slow">AnimeBet</h1>
+      <button (click)="toggleView()" class="neon-glow bg-blue-600 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded-full">
+        {{ showBets ? 'Volver al Inicio' : 'Ir a Apostar' }}
+      </button>
+    </div>
+  </nav>
+  <app-home *ngIf="!showBets"></app-home>
+  <app-bet *ngIf="showBets"></app-bet>
+</div>

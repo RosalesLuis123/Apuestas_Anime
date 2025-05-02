@@ -1,0 +1,43 @@
+<!-- Copyright © 2025 Tu Nombre. All rights reserved. -->
+<div class="container mx-auto p-6 max-w-3xl">
+    <h1 class="text-4xl font-bold text-center mb-8 neon-glow animate-pulse-slow">Apuestas de Anime y Manga</h1>
+    <div class="text-xl mb-6 text-gray-200">Saldo: {{ balance }} créditos</div>
+
+    <div class="bg-gray-800 p-8 rounded-xl shadow-lg card-hover">
+      <h2 class="text-2xl font-semibold mb-6 neon-glow">Realizar Apuesta</h2>
+      <div class="mb-6">
+        <label for="series" class="block text-sm font-medium text-gray-300">Serie</label>
+        <select id="series" [(ngModel)]="form.series" class="w-full p-3 mt-1 bg-gray-700 rounded-md text-white focus:ring-2 focus:ring-blue-500">
+          <option value="naruto">Naruto</option>
+          <option value="one-piece">One Piece</option>
+          <option value="attack-on-titan">Attack on Titan</option>
+        </select>
+      </div>
+      <div class="mb-6">
+        <label for="chapter" class="block text-sm font-medium text-gray-300">Capítulo</label>
+        <input type="number" id="chapter" [(ngModel)]="form.chapter" class="w-full p-3 mt-1 bg-gray-700 rounded-md text-white focus:ring-2 focus:ring-blue-500" min="1" />
+      </div>
+      <div class="mb-6">
+        <label for="event" class="block text-sm font-medium text-gray-300">Evento</label>
+        <select id="event" [(ngModel)]="form.event" class="w-full p-3 mt-1 bg-gray-700 rounded-md text-white focus:ring-2 focus:ring-blue-500">
+          <option value="fight-win">Un personaje gana una pelea</option>
+          <option value="plot-twist">Ocurre un giro argumental</option>
+          <option value="new-character">Aparece un nuevo personaje</option>
+        </select>
+      </div>
+      <div class="mb-6">
+        <label for="amount" class="block text-sm font-medium text-gray-300">Cantidad a Apostar</label>
+        <input type="number" id="amount" [(ngModel)]="form.amount" class="w-full p-3 mt-1 bg-gray-700 rounded-md text-white focus:ring-2 focus:ring-blue-500" min="10" max="1000" />
+      </div>
+      <button (click)="placeBet()" class="w-full bg-blue-600 hover:bg-blue-700 text-white font-bold py-3 px-6 rounded-full neon-glow">Apostar</button>
+    </div>
+
+    <div class="mt-10">
+      <h2 class="text-2xl font-semibold mb-6 neon-glow">Historial de Apuestas</h2>
+      <ul class="space-y-4">
+        <li *ngFor="let bet of bets" class="bg-gray-700 p-4 rounded-xl card-hover">
+          {{ bet.series }} - Capítulo {{ bet.chapter }}: {{ bet.event }} (Apuesta: {{ bet.amount }} créditos, Resultado: {{ bet.outcome }}, Ganancia: {{ bet.winnings }} créditos)
+        </li>
+      </ul>
+    </div>
+  </div>
