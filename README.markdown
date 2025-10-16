@@ -82,4 +82,4 @@ anime-betting-app/
 Este proyecto está licenciado bajo la Licencia MIT. Consulta el archivo [LICENSE](LICENSE) para más detalles.
 
 ## Copyright
-Copyright © 2025 Tu Nombre. Todos los derechos reservados.
+Copyright © 2025 LuisRosales. Todos los derechos reservados.
